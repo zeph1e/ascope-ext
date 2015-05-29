@@ -30,7 +30,7 @@ Download ascope-ext.el and add following lines into your emacs init script:
 
 ```lisp
 ;; Assume that you downloaded ascope-ext.el into ~/.emacs.d/lisp/ascope-ext/ directory:
-(add-to-list 'load-file "~/.emacs.d/lisp/ascope-ext")
+(add-to-list 'load-path "~/.emacs.d/lisp/ascope-ext")
 (require 'ascope-ext)
 (ascope-install-hooks)
 ```
