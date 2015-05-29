@@ -16,7 +16,7 @@ MIT License
 #### *el-get* installation
 
 Since the recipe is not yet in official repository, you should download ascope-ext.rcp
-from https://raw.githubusercontent.com/zeph1e/.emacs.d/master/ascope-ext.rcp
+from https://raw.githubusercontent.com/zeph1e/ascope-ext/master/ascope-ext.rcp
 and copy it into your local recipe directory.
 And then add a following line into your emacs init script(.emacs or .emacs.d/init.el):
 
