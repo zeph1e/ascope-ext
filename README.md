@@ -73,6 +73,6 @@ You may search following search options which were not supported in ascope:
 
 ## TODOs
 
- - Fix searched item priting in file search. It doesn't looks good.
+ - Fix found item printing in file search. It doesn't looks good.
  - Search history: multiple result buffers and the way to iterate.
  - more...
