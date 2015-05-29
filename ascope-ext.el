@@ -18,6 +18,32 @@
 ;; OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 ;; THE SOFTWARE.
 
+;; ascope-ext (https://github.com/zeph1e/ascope-ext)
+;;
+;; An extension for ascope (http://emacswiki.org/emacs/ascope.el),
+;; which provides some extra features which are not supported in ascope:
+;;
+;;  - cscope database manipulation
+;;  - a minor mode, ascope-mode for key bindings
+;;  - more search options (egrep-pattern, filename, assignment-to-the-symbol)
+;;
+;; Keybindings:
+;;
+;;  C-c s /  Set initial directory (source root).
+;;  C-c s s  Find this symbol.
+;;  C-c s d  Find global definition.
+;;  C-c s g  Find global definition.
+;;  C-c s C  Find called functions.
+;;  C-c s c  Find functions calling this function.
+;;  C-c s t  Find this text string.
+;;  C-c s e  Find this egrep pattern.
+;;  C-c s i  Find files including file.
+;;  C-c s f  Find this file.
+;;  C-c s =  Find assignments to this symbol.
+;;  C-c s a  Find assignments to this symbol.
+;;  C-c s A  Find all symbol assignments.
+
+
 (defgroup ascope-ext nil
 "An extension for `ascope (http://emacswiki.org/emacs/ascope.el)',
 which provides some extra features which are not supported in `ascope':
@@ -92,7 +118,7 @@ INIT is a flag to decide run `ascope-init' when database is created.
 	    (kill-process process)
 	    (if (get-buffer "*ascope*") (kill-buffer (get-buffer "*ascope*")))
 	    (if (get-process "ascope") (kill-process (get-process "ascope")))
-	    (while (processp (get-process ascope-create-database-proc)) ;; wait for process termination
+	    (while (processp (get-process ascope-create-database-proc)) ; wait for process termination
 	      (sit-for 1)))
 	  (setq start-worker nil))))
     (if start-worker
@@ -106,9 +132,10 @@ INIT is a flag to decide run `ascope-init' when database is created.
 	  (process-put process 'working-dir dir)
 	  (process-put process 'do-init init)
 	  (set-process-sentinel process 'ascope-create-database-sentinel))))))
-      
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; advices which overrides functions in ascope
+;;;###autoload
 (defadvice ascope-init (around ascope-init-around (dir))
   (interactive "DCscope Initial Directory: ")
   (if (file-exists-p (concat dir "/cscope.out"))
