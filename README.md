@@ -15,7 +15,7 @@ MIT License
 
 #### *el-get* installation
 
-Just try [M-x el-get-install RET ascope-ext RET], or add a following line into your
+Just try `M-x` el-get-install `RET` ascope-ext `RET`, or add a following line into your
 emacs init script(.emacs or .emacs.d/init.el):
 
 ```lisp
@@ -23,7 +23,7 @@ emacs init script(.emacs or .emacs.d/init.el):
 ```
 
 If your el-get complain that there's no such ascope-ext package, update your el-get
-by [M-x el-get-self-update]
+by `M-x` el-get-self-update `RET`
 
 #### Manual installation
 
