@@ -15,14 +15,15 @@ MIT License
 
 #### *el-get* installation
 
-Since the recipe is not yet in official repository, you should download ascope-ext.rcp
-from https://raw.githubusercontent.com/zeph1e/ascope-ext/master/ascope-ext.rcp
-and copy it into your local recipe directory.
-And then add a following line into your emacs init script(.emacs or .emacs.d/init.el):
+Just try [M-x el-get-install RET ascope-ext RET], or add a following line into your
+emacs init script(.emacs or .emacs.d/init.el):
 
 ```lisp
 (el-get-bundle! ascope-ext)
 ```
+
+If your el-get complain that there's no such ascope-ext package, update your el-get
+by [M-x el-get-self-update]
 
 #### Manual installation
 
