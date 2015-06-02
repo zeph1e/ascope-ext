@@ -180,12 +180,13 @@ Key bindings:
 \\{ascope-mode-keymap}"
   nil nil ascope-mode-keymap
   :group 'tools)
-  
+
 ;;;###autoload
 (defun ascope-install-hooks ()
   (interactive)
   (add-hook 'c-mode-hook 'ascope-mode)
   (add-hook 'c++-mode-hook 'ascope-mode)
+  (add-hook 'cc-mode-hook 'ascope-mode)
   (add-hook 'idl-mode-hook 'ascope-mode)
   (add-hook 'dired-mode-hook 'ascope-mode))
 
