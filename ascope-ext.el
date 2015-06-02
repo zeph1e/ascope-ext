@@ -184,6 +184,7 @@ Key bindings:
 ;;;###autoload
 (defun ascope-install-hooks ()
   (interactive)
+  (add-hook 'ascope-list-entry-hook 'ascope-mode)
   (add-hook 'c-mode-hook 'ascope-mode)
   (add-hook 'c++-mode-hook 'ascope-mode)
   (add-hook 'cc-mode-hook 'ascope-mode)
